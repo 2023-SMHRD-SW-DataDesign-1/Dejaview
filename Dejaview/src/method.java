@@ -6,5 +6,10 @@ public class method {
 		
 	}
 	
+	public void Zelda () {
+		System.out.println("젤다 하고 시프다");
+		
+	}
+	
 	
 }
