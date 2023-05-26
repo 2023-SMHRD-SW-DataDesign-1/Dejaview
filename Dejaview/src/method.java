@@ -11,6 +11,9 @@ public class method {
 		System.out.println("두 번째 메소드입니다.");
 	}
 	
+	public void lsh () {
+		System.out.println("이승훈입니다.");
+	}
 	
 	
 }
