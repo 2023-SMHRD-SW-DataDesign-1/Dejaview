@@ -1,5 +1,3 @@
-
-
 public class GitTest {
 
 	public static void main(String[] args) {
@@ -10,8 +8,12 @@ public class GitTest {
 		
 		System.out.println("김드보라");
 		System.out.println("팀 데자뷰");
+		
+		System.out.println("집에 가고싶다");
+		System.out.println("밥 먹고 싶다");
 
 	}
 
 
 }
+
