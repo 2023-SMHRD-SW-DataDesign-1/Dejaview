@@ -6,5 +6,8 @@ public class method {
 		
 	}
 	
+	public void lsh () {
+		System.out.println("이승훈입니다.");
+	}
 	
 }
