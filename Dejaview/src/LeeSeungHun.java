@@ -16,7 +16,7 @@ public class LeeSeungHun {
 		
 		//고블린 정보 나중에 메소드화
 		int Ghp = 10;
-		int Gad = 2;
+		int Gad = 1;
 		
 		while (true) {
 		if (hp < 0) {
@@ -45,7 +45,10 @@ public class LeeSeungHun {
 			
 			
 			System.out.println("야생의 고블린이 나타났다.");
-			
+
+
+
+
 			while (true) {
 				System.out.print("공격을 하세요 >> ");
 				System.out.println("1. 공격");
@@ -53,9 +56,8 @@ public class LeeSeungHun {
 				if (ck == 1) {
 					Ghp-=2;
 					System.out.println("고블린 의 HP가 "+ Ghp + "남았습니다." );
-					System.out.println("고블린이 공격을 했습니다.");
 					hp--;
-					System.out.println("용사의 체력은 " + hp + "남았습니다.");
+					System.out.println("용사의 HP은 " + hp + "남았습니다.");
 					System.out.println();
 				}else {
 					System.out.println("잘못된 입력입니다." );
