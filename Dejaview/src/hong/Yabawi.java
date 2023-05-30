@@ -31,8 +31,16 @@ public class Yabawi {
 				System.out.println("컵은 " + cupnum + "개! 공은 하나! 확률은..." + 1 / (double) cupnum);
 
 				ball = rd.nextInt(cupnum) + 1;
-				System.out.println("컵을 골라 주세요 >> ");
-				guess = sc.nextInt();
+			
+				while (true) {
+					System.out.println("컵을 골라 주세요 >> ");
+					guess = sc.nextInt();
+					if (guess == 0 || guess > cupnum) {
+						System.out.println("컵 번호를 확인해 주세요");
+					} else {
+						break;
+					}
+				}
 				if (ball == guess) {
 					System.out.println("축하드립니다");
 					gold *= 1.5;
@@ -46,8 +54,15 @@ public class Yabawi {
 			} else if (cupnum == 3) {
 				System.out.println("컵은 " + cupnum + "개! 공은 하나! 확률은..." + 1 / (double) cupnum);
 				ball = rd.nextInt(cupnum) + 1;
-				System.out.println("컵을 골라 주세요 >> ");
-				guess = sc.nextInt();
+				while (true) {
+					System.out.println("컵을 골라 주세요 >> ");
+					guess = sc.nextInt();
+					if (guess == 0 || guess > cupnum) {
+						System.out.println("컵 번호를 확인해 주세요");
+					} else {
+						break;
+					}
+				}
 				if (ball == guess) {
 					System.out.println("축하드립니다");
 					gold *= 2;
@@ -61,8 +76,15 @@ public class Yabawi {
 			} else if (cupnum == 5) {
 				System.out.println("컵은 " + cupnum + "개! 공은 하나! 확률은..." + 1 / (double) cupnum);
 				ball = rd.nextInt(cupnum) + 1;
-				System.out.println("컵을 골라 주세요 >> ");
-				guess = sc.nextInt();
+				while (true) {
+					System.out.println("컵을 골라 주세요 >> ");
+					guess = sc.nextInt();
+					if (guess == 0 || guess > cupnum) {
+						System.out.println("컵 번호를 확인해 주세요");
+					} else {
+						break;
+					}
+				}
 				if (ball == guess) {
 					System.out.println("축하드립니다");
 					gold *= 4;
@@ -78,7 +100,6 @@ public class Yabawi {
 			}
 
 		}
-
 	}
 
 }
