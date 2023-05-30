@@ -36,7 +36,6 @@ public class test {
 					String dbpw = "smhrd3";
 
 					conn = DriverManager.getConnection(dburl, dbuser, dbpw);
-					int a = 3;
 
 					if (conn == null) {
 						System.out.println("접속실패");
