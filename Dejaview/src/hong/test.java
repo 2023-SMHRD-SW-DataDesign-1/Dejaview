@@ -11,7 +11,7 @@ import java.util.Scanner;
 public class test {
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
-		Random  = new Random();
+		Random rand = new Random();
 		// 회원가입 구간
 		while (true) {
 			System.out.println("1. 회원가입 2. 로그인 3. 랭킹보기");
@@ -173,37 +173,6 @@ public class test {
 				System.out.println("게임을 시작합니다. 게임은 야바위게임~ 여러 컵 중에 공이 들어가있는 컵은 단 1개!!");
 				System.out.println("컵이 늘어 날 수록 배당도 늘어납니다.");
 				System.out.println("컵2개 - 1.5배,  컵3개 - 2배,  컵5개 - 4배");
-<<<<<<< HEAD
-				
-				for(int i =0; i<2; i++) {
-				System.out.print("컵의 개수를 골라주세요 : ");
-				int cupnum = sc.nextInt(); //컵의 개수
-				int ball; //컵에 들어있는 볼 위치
-				int guess;//사용자가 고를 컵
-				
-				
-				System.out.print("골드를 얼마나 거시겠습니까? : ");
-				double gold = sc.nextInt();
-				
-				
-				// 이어 붙일때 전체 골드에서 차감할 기능 추가 + 걸 돈의 최대값 지정
-				
-				
-				if(cupnum==2) {
-					System.out.println("컵은 "+ cupnum+"개! 공은 하나! 확률은..."+ 1/(double)cupnum);
-					
-					ball = rd.nextInt(cupnum)+1;
-					System.out.println("컵을 골라 주세요 >> ");			
-					guess= sc.nextInt();
-					if(ball == guess) {
-						System.out.println("축하드립니다");
-						gold*=1.5;
-						System.out.println("획득한 골드는 " +gold +"G 입니다" );
-						
-					}else {
-						System.out.println("틀렸습니다~~~~");
-						gold =0;
-=======
 
 				for (int i = 0; i < 2; i++) {
 					System.out.print("컵의 개수를 골라주세요 : ");
@@ -211,17 +180,30 @@ public class test {
 					int ball; // 컵에 들어있는 볼 위치
 					int guess;// 사용자가 고를 컵
 					int gold2;
-					System.out.print("골드를 얼마나 거시겠습니까? : ");
-					gold2 = sc.nextInt();
-
+					while (true) {
+						System.out.print("골드를 얼마나 거시겠습니까? : ");
+						gold2 = sc.nextInt();
+						gold -= gold2;
+						if (gold > gold2)
+							break;
+						if (gold <= gold2)
+							System.out.println("골드가 부족합니다.");
+					}
 					// 이어 붙일때 전체 골드에서 차감할 기능 추가 + 걸 돈의 최대값 지정
 
 					if (cupnum == 2) {
 						System.out.println("컵은 " + cupnum + "개! 공은 하나! 확률은..." + 1 / (double) cupnum);
 
 						ball = rand.nextInt(cupnum) + 1;
-						System.out.println("컵을 골라 주세요 >> ");
-						guess = sc.nextInt();
+						while (true) {
+							System.out.println("컵을 골라 주세요 >> ");
+							guess = sc.nextInt();
+							if (guess == 0 || guess > cupnum) {
+								System.out.println("컵 번호를 확인해 주세요");
+							} else {
+								break;
+							}
+						}
 						if (ball == guess) {
 							System.out.println("축하드립니다");
 							gold2 *= 1.5;
@@ -236,8 +218,15 @@ public class test {
 					} else if (cupnum == 3) {
 						System.out.println("컵은 " + cupnum + "개! 공은 하나! 확률은..." + 1 / (double) cupnum);
 						ball = rand.nextInt(cupnum) + 1;
-						System.out.println("컵을 골라 주세요 >> ");
-						guess = sc.nextInt();
+						while (true) {
+							System.out.println("컵을 골라 주세요 >> ");
+							guess = sc.nextInt();
+							if (guess == 0 || guess > cupnum) {
+								System.out.println("컵 번호를 확인해 주세요");
+							} else {
+								break;
+							}
+						}
 						if (ball == guess) {
 							System.out.println("축하드립니다");
 							gold2 *= 2;
@@ -248,14 +237,20 @@ public class test {
 						} else {
 							System.out.println("틀렸습니다~~~~");
 							gold2 = 0;
-							System.out.println("현재 보유 골드는 : " + gold);
 						}
 
 					} else if (cupnum == 5) {
 						System.out.println("컵은 " + cupnum + "개! 공은 하나! 확률은..." + 1 / (double) cupnum);
 						ball = rand.nextInt(cupnum) + 1;
-						System.out.println("컵을 골라 주세요 >> ");
-						guess = sc.nextInt();
+						while (true) {
+							System.out.println("컵을 골라 주세요 >> ");
+							guess = sc.nextInt();
+							if (guess == 0 || guess > cupnum) {
+								System.out.println("컵 번호를 확인해 주세요");
+							} else {
+								break;
+							}
+						}
 						if (ball == guess) {
 							System.out.println("축하드립니다");
 							gold2 *= 4;
@@ -266,50 +261,14 @@ public class test {
 						} else {
 							System.out.println("틀렸습니다~~~~");
 							gold2 = 0;
-							System.out.println("현재 보유 골드는 : " + gold);
 						}
 					} else {
 						System.out.println("컵의 개수는 2개, 3개, 5개 중 고르세요");
 						i--;
->>>>>>> branch 'master' of https://github.com/2023-SMHRD-SW-DataDesign-1/Dejaview.git
 					}
-					
-				}else if(cupnum==3) {
-					System.out.println("컵은 "+ cupnum+"개! 공은 하나! 확률은..."+ 1/(double)cupnum);
-					ball = rd.nextInt(cupnum)+1;
-					System.out.println("컵을 골라 주세요 >> ");			
-					guess= sc.nextInt();
-					if(ball == guess) {
-						System.out.println("축하드립니다");
-						gold*=2;
-						System.out.println("획득한 골드는 " +gold +"G 입니다" );
-						
-					}else {
-						System.out.println("틀렸습니다~~~~");
-						gold =0;
-					}
-					
-					
-				}else if(cupnum==5) {
-					System.out.println("컵은 "+ cupnum+"개! 공은 하나! 확률은..."+ 1/(double)cupnum);
-					ball = rd.nextInt(cupnum)+1;
-					System.out.println("컵을 골라 주세요 >> ");			
-					guess= sc.nextInt();
-					if(ball == guess) {
-						System.out.println("축하드립니다");
-						gold*=4;
-						System.out.println("획득한 골드는 " +gold +"G 입니다" );
-						
-					}else {
-						System.out.println("틀렸습니다~~~~");
-						gold =0;
-					}
-				}else{
-					System.out.println("컵의 개수는 2개, 3개, 5개 중 고르세요");
-					i--;
+
 				}
-				
-				}
+
 			}
 
 			if (s == 2) {
@@ -421,6 +380,7 @@ public class test {
 
 				System.out.println();
 				System.out.println("퀴즈를 풀 수 있는 기회가 소진되었습니다. 내일 다시 도전해주세요.");
+				break;
 			}
 
 			day--;
@@ -429,7 +389,6 @@ public class test {
 				System.out.println("어서오십시오.");
 				System.out.println("빚을 갚을 날이 도래했습니다.");
 				System.out.println("빚 400G를 차감한 현재 골드는 : " + (gold - 400));
-				break;
 			}
 		}
 	}
