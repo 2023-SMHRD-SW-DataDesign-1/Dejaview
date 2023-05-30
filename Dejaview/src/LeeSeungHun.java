@@ -7,22 +7,17 @@ public class LeeSeungHun {
 		Random rand = new Random();
 		// 회원가입 및 로그인 구간.
 		// 로그인 성공시 브레이크로 빠져나옴/!
-		int day = 5;
-		int money = 0;
-
-		// 영웅캐릭정보 나중에 메소드화
-		int hp = 16;
-		int ad = 2;
-
-		// 고블린 정보 나중에 메소드화
-		int Ghp = 10;
-		int Gad = 1;
+		int day = 5; // 날짜
+		int gold = 0; // 골드
+		int hp = 16; // 영웅 체력
+		int Ghp = 10; // 고블린 체력
 
 		while (true) {
 
 			if (day == 0)
 				break;
 			System.out.println("남은 기한 " + day + "일");
+			System.out.println("로비입니다.");
 			System.out.println("1. 도박장 2. 사냥터 3. 골든벨");
 			System.out.print("갈곳을 선택 하세요 >> ");
 			System.out.println();
@@ -62,7 +57,7 @@ public class LeeSeungHun {
 						System.out.println();
 						if (hp <= 0) {
 							System.out.println("용사의 체력이 다떨어졌습니다.");
-							System.out.println("총 획득한 골드 : " + money);
+							System.out.println("총 획득한 골드 : " + gold);
 							break;
 						}
 					} else {
@@ -72,14 +67,19 @@ public class LeeSeungHun {
 						System.out.println("고블린을 잡았습니다.");
 						int hunt = rand.nextInt(10);
 						if (hunt == 0) {
-							money += 200;
+							gold += 200;
+							System.out.println("   .aMMMMP    .aMMMb     dMP     dMMMMb ");
+							System.out.println("  dMP\"       dMP\"dMP    dMP     dMP VMP ");
+							System.out.println(" dMP MMP\"   dMP dMP    dMP     dMP dMP  ");
+							System.out.println("dMP.dMP    dMP.aMP    dMP     dMP.aMP");
+							System.out.println("VMMMP\"     VMMMP\"    dMMMMMP dMMMMP\"   ");
 							System.out.println("운이 좋았습니다. 황금 고블린이 였습니다. 골드 200G를 획득합니다.");
-							System.out.println("현재 골드는 : " + money);
+							System.out.println("현재 골드는 : " + gold);
 							System.out.println();
 
 						} else {
-							money += 100;
-							System.out.println("골드 100G를 획득합니다. 현재 골드는 : " + money);
+							gold += 100;
+							System.out.println("골드 100G를 획득합니다. 현재 골드는 : " + gold);
 							System.out.println();
 						}
 
