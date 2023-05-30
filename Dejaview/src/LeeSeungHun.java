@@ -19,10 +19,7 @@ public class LeeSeungHun {
 		int Gad = 1;
 
 		while (true) {
-			if (hp < 0) {
-				System.out.println("용사의 체력이 다떨어졌습니다.");
-				break;
-			}
+
 			if (day == 0)
 				break;
 			System.out.println("남은 기한 " + day + "일");
@@ -39,6 +36,20 @@ public class LeeSeungHun {
 
 				System.out.println("야생의 고블린이 나타났다.");
 
+				System.out.println("⠀⠀⠀⠀⠀⠀⣀⢀⠀");
+				System.out.println("⠀⠀⠀⠀⠀⠀⠺⠾⡀⣀");
+				System.out.println("⠀⠀⠀⠀⠀⢬⢱⡷⠿⠾⣃⠂⠀");
+				System.out.println("⠀⠀⠀⠀⠹⣿⣿⣾⣲⠉⠪⠁⠀");
+				System.out.println("⠀⠀⣰⢼⣴⣶⢽⡻⣷⣠⠿⠤⣆⣀⠀");
+				System.out.println("⠀⠀⣾⣽⠿⣿⣟⣝⡟⠱⣽⣢⠿⡏⢆⠠⡀⠀");
+				System.out.println("⠀⠐⡻⡧⡀⠈⣿⣿⣿⣿⣿⡈⠀⣼⣈⣠⡜⣄⠀⠀");
+				System.out.println("⠀⠺⣷⣖⣄⠐⢻⡏⠍⠹⠻⣇⠀⣽⣧⠹⠷⠛⠚⠀");
+				System.out.println("⠀⠀⠈⢿⣿⡿⠛⢻⣷⢴⣾⣿⠁⢿⣿⣯⣷⣿⣮⠀");
+				System.out.println("⠀⠈⠞⢲⡇⠀⠀⠀⡙⠘⠟⣿⠁⠀⠻⢻⣟⠿⡍⠀");
+				System.out.println("⠀⠀⠀⠀⢷⡦⠀⠀⠁⠀⢀⣿⠦⠀⠀⠁⠉⠈⠁⠀");
+				System.out.println("⠀⠀⠀⢰⣿⡏⡀⠀⠀⠀⣹⣫⢅⠀⠀⠀⠐⠀⠀⠀");
+				System.out.println("⠀⠀⠈⠜⠊⠒⠈⠒⠒⠊⠀⠉⠉⠀⠁⠀⠀⠀");
+
 				while (true) {
 					System.out.print("공격을 하세요 >> ");
 					System.out.println("1. 공격");
@@ -49,6 +60,11 @@ public class LeeSeungHun {
 						hp--;
 						System.out.println("용사의 HP은 " + hp + "남았습니다.");
 						System.out.println();
+						if (hp <= 0) {
+							System.out.println("용사의 체력이 다떨어졌습니다.");
+							System.out.println("총 획득한 골드 : " + money);
+							break;
+						}
 					} else {
 						System.out.println("잘못된 입력입니다.");
 					}
