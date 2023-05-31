@@ -55,9 +55,11 @@ public class Main {
 			// 랭킹확인
 			if (n == 3) {
 				GameDAO dao = new GameDAO();
-				ArrayList<GameDTO> rankingLIst = dao.rankingLIst(gameDTO);
-				for(int i = 0; i<rankingLIst.size(); i++){
-				System.out.println(i+". id : " +rankingLIst.get(i).getId()+", 점수 : "+ rankingLIst.get(i).getScore());
+				ArrayList<GameDTO> LIst = dao.rankingLIst(gameDTO);
+				for (int i = 0; i < LIst.size(); i++) {
+					System.out.println(i + ". id : " + LIst.get(i).getId() + ", 점수 : " + LIst.get(i).getScore());
+				}
+
 			}
 
 			if (b == 1)
@@ -66,8 +68,7 @@ public class Main {
 		// 로그인 성공시 브레이크로 빠져나옴.
 		// 변수값 DTO로 넘김
 		BgmController bgm = new BgmController();
-		bgm.play();
-		
+		bgm.play(0);
 		gameDTO.setDay(5); // 게임 기한 설정
 		// 스토리 설명
 		sc.nextLine();
@@ -80,7 +81,7 @@ public class Main {
 		System.out.println("용사의 평화로운 노후를 위해 사냥과 도박과 골든벨을 통해 돈을 벌어보세요!");
 
 		while (true) {
-			
+			bgm.play(1);
 			System.out.println();
 			System.out.println("어서오십시오.");
 			System.out.println("이곳은 로비입니다.");
@@ -96,6 +97,7 @@ public class Main {
 			System.out.println();
 			// 야바위 도박장 코드
 			if (s == 1) {
+				bgm.play(2);
 				if (gameDTO.getGold() == 0) {
 					System.out.println("돈이 없어서 도박장에서 입구 컷 당했습니다.");
 					gameDTO.setDay(gameDTO.getDay() + 1);
@@ -151,6 +153,7 @@ public class Main {
 			}
 			// 고블린 사냥 코드
 			if (s == 2) {
+				bgm.play(3);
 				if (gameDTO.getHp() == 0) {
 					System.out.println("체력이 없는 용사는 사냥을 하기 싫어합니다.");
 					gameDTO.setDay(gameDTO.getDay() + 1);
@@ -178,6 +181,7 @@ public class Main {
 				}
 			}
 			if (s == 3) {
+				bgm.play(4);
 				Controller.GoldenbelCon gc = new Controller.GoldenbelCon();
 				System.out.println("===========================골든벨===============================");
 				System.out.println("골든벨은 easy 문제와 hard 문제로 구성되어 있으며 연산문제의 정답을 맞추는 미니게임입니다.");
@@ -211,6 +215,7 @@ public class Main {
 			gameDTO.setDay(gameDTO.getDay() - 1);
 			// 마지막날 빚 갚는날
 			if (gameDTO.getDay() <= 0) {
+				bgm.play(5);
 				System.out.println("어서오십시오.");
 				System.out.println("빚을 갚을 날이 도래했습니다.");
 				System.out.println("빚 400G를 차감한 현재 골드는 : " + (gameDTO.getGold() - 400));
@@ -220,5 +225,4 @@ public class Main {
 
 		}
 	}
-}
 }
