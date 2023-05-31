@@ -51,11 +51,8 @@ public class GameDAO {
 	// 회원가입
 	public int insertMember(GameDTO dto) {
 		getCon();
-<<<<<<< HEAD
-		String sql = "insert into gamemember(ID,PW) values(?,?)";
-=======
 		String sql = "insert into GameMember(id,pw) values(?,?)";
->>>>>>> branch 'master' of https://github.com/2023-SMHRD-SW-DataDesign-1/Dejaview.git
+
 		int cnt = 0;
 		try {
 			psmt = conn.prepareStatement(sql);
