@@ -6,10 +6,24 @@ public class GameDTO {
 	private String pw;
 	
 	private int gold;
-	private int hp;
+	private int hp = 15;
 	private int day;
+	private int score;
 	
 	
+	
+
+	public int getScore() {
+		return score;
+	}
+
+
+
+	public void setScore(int score) {
+		this.score = score;
+	}
+
+
 
 	public GameDTO(String id, String pw) {
 		super();
@@ -17,7 +31,11 @@ public class GameDTO {
 		this.pw = pw;
 	}
 
-	
+	public GameDTO(String id, int score) {
+		super();
+		this.id = id;
+		this.score = score;
+	}
 	
 	public int getGold() {
 		return gold;

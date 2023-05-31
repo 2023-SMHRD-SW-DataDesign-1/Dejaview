@@ -5,6 +5,7 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 
 
 public class GameDAO {
@@ -90,7 +91,37 @@ public class GameDAO {
 		return name;
 	}
 	
+	// 랭킹 시스템
+public ArrayList<GameDTO> rankingLIst(GameDTO dto) {
+		
+		getCon();
+		ArrayList<GameDTO> rankingLIst =new ArrayList<GameDTO>();
+		
+		try {
+			String sql = "select id, score from GameMember order by score ";
+			psmt = conn.prepareStatement(sql);
+			rs = psmt.executeQuery();
+			
+			while(rs.next()) {
+				String id = rs.getString(1);
+				int score = rs.getInt(2);
+				
+				
+				dto = new GameDTO(id, score);
+				rankingLIst.add(dto);
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}finally {
+			getClose();
+		}
 	
+		
+		
+		
+		return rankingLIst;
+		
+	}
 	
 	
 	
