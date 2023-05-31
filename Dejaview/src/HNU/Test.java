@@ -1,3 +1,4 @@
+package HNU;
 import java.util.Scanner;
 
 public class Test {

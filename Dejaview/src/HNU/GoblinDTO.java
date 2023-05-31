@@ -1,3 +1,4 @@
+package HNU;
 
 public class GoblinDTO {
 	
