@@ -16,6 +16,7 @@ public class Main {
 		Scanner sc = new Scanner(System.in);
 		GameDTO gameDTO = new GameDTO(null, null);
 		GameDAO gameDAO = new GameDAO();
+		String rId = null;
 		// 회원가입 구간
 		while (true) {
 			System.out.println("1. 회원가입 2. 로그인 3. 랭킹보기");
@@ -48,6 +49,7 @@ public class Main {
 
 				if (name != null) {
 					System.out.println(name + "님 로그인에 성공하셨습니다.");
+					rId = id;
 					b = 1;
 					break;
 				} else {
@@ -223,7 +225,11 @@ public class Main {
 				System.out.println("어서오십시오.");
 				System.out.println("빚을 갚을 날이 도래했습니다.");
 				System.out.println("빚 400G를 차감한 현재 골드는 : " + (gameDTO.getGold() - 400));
+				int score = gameDTO.getGold() - 400;
 				sc.close();
+				gameDAO.insertscore(rId,gameDTO.getGold() - 400);
+				
+				
 				break;
 			}
 

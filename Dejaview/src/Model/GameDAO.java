@@ -55,13 +55,6 @@ public class GameDAO {
 
 		String sql = "insert into GameMember(id,pw) values(?,?)";
 
-<<<<<<< HEAD
-
-
-
-
-=======
->>>>>>> branch 'master' of https://github.com/2023-SMHRD-SW-DataDesign-1/Dejaview.git
 		int cnt = 0;
 		try {
 			psmt = conn.prepareStatement(sql);
@@ -129,5 +122,24 @@ public class GameDAO {
 		return rankingLIst;
 
 	}
+	
+	// 랭킹 저장 시스템
+		public int insertscore(String id, int n) {
+			getCon();
+			String sql = "UPDATE GameMember SET score = ? WHERE id = ?";
+			int cnt = 0;
+			try {
+				psmt = conn.prepareStatement(sql);
+				psmt.setString(2, id);
+				psmt.setInt(1, n);
+				cnt = psmt.executeUpdate();
+				return cnt;
+			} catch (Exception e) {
+				e.printStackTrace();
+			} finally {
+				getClose();
+			}
+			return cnt;
+		}
 
 }
