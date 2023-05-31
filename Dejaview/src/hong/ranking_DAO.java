@@ -8,25 +8,25 @@ public class ranking_DAO {
 
 	public ArrayList<GameDTO> rankingLIst(GameDTO dto) {
 		
-		getCon();
+		// getCon();
 		ArrayList<GameDTO> rankingLIst =new ArrayList<GameDTO>();
 		
 		try {
 			String sql = "select * from Member order by score ";
-			psmt = conn.prepareStatement(sql);
-			rs = psmt.executeQuery();
+			// psmt = conn.prepareStatement(sql);
+			// rs = psmt.executeQuery();
 			
-			while(rs.next()) {
-				String id = rs.getString(1);
-				int gold = rs.getInt(2);
+			// while(rs.next()) {
+				// String id = rs.getString(1);
+				// int gold = rs.getInt(2);
 				
-				GameDTO dto = new GameDTO(id, score);
+				// GameDTO dto = new GameDTO(id, score);
 				rankingLIst.add(dto);
-			}
+			// }
 		} catch (Exception e) {
 			e.printStackTrace();
 		}finally {
-			getClose();
+			// getClose();
 		}
 	
 		
