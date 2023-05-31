@@ -51,7 +51,7 @@ public class GameDAO {
 	// 회원가입
 	public int insertMember(GameDTO dto) {
 		getCon();
-		String sql = "insert into GameMember values(?,?)";
+		String sql = "insert into GAMEMEMBER(ID,PW) values(?,?)";
 		int cnt = 0;
 		try {
 			psmt = conn.prepareStatement(sql);
@@ -71,7 +71,7 @@ public class GameDAO {
 		getCon();
 		String name = null;
 		try {
-			String sql = "select id from GameMember where id = ? and pw = ?";
+			String sql = "select id from GAMEMEMBER(ID,PW) where id = ? and pw = ?";
 			
 			psmt=conn.prepareStatement(sql);
 			psmt.setString(1,dto.getId());
