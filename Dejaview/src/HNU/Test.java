@@ -1,6 +1,8 @@
 package HNU;
 import java.util.Scanner;
 
+import Controller.BgmController;
+
 public class Test {
 
 	public static void main(String[] args) {
