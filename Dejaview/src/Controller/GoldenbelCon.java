@@ -34,6 +34,7 @@ public class GoldenbelCon {
 	
 	// 덧셈문제 답 확인
 	public int getEasyAnswer(int answer) {
+		gold = 0;
 		if(num1+num2 == answer) {
 			System.out.println("정답입니다! 30 골드를 획득하였습니다.");
 			gold += 30;
@@ -48,6 +49,7 @@ public class GoldenbelCon {
 	
 	//곱셈문제 답 확인
 	public int getHardAnswer(int answer) {
+		gold = 0;
 		if(num1*num2 == answer) {
 			System.out.println("정답입니다! 50 골드를 획득하였습니다.");
 			gold+=50;
