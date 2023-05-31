@@ -3,8 +3,12 @@ package View;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-import Controller.*;
-import Model.*;
+import Controller.BgmController;
+import Controller.GoblinCon;
+import Controller.JoinCon;
+import Controller.LoginCon;
+import Model.GameDAO;
+import Model.GameDTO;
 
 public class Main {
 

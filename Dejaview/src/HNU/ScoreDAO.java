@@ -5,6 +5,8 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
+import Model.GameDTO;
+
 public class ScoreDAO {
 	
 	Connection conn = null;
@@ -43,13 +45,14 @@ public class ScoreDAO {
 		}
 	}
 	
-	public int insertMember(ScoreDTO sto) {
+	public int insertMember(GameDTO dto) {
 		getCon();
-		String sql = "insert into GameMember(score) values(?)";
+		String sql = "insert into GameMember(id, score) values(?, ?)";
 		int cnt = 0;
 		try {
 			psmt = conn.prepareStatement(sql);
-			psmt.setInt(1, sto.getScore());
+			psmt.setString(1, dto.getId());
+			psmt.setInt(3, dto.getScore());
 			cnt = psmt.executeUpdate();
 			return cnt;
 		} catch (Exception e) {

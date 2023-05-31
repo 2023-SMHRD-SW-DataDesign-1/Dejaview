@@ -43,6 +43,7 @@ public class goldenbel_story {
 			//2. hard 문제(곱하기)
 			System.out.println();
 			System.out.println("[hard 문제]");
+			sc.nextLIne();
 			
 			//1-1. 문제 출력
 			gc.getHardQuiz();

@@ -9,14 +9,14 @@ public class Test {
 		
 		Scanner sc = new Scanner(System.in);
 		
-		BgmController con = new BgmController();
+		BgmController bgm = new BgmController();
 		
-		con.play();
+		bgm.play(0);
 		
 		System.out.print("정지 버튼 누름 >> ");
 		int num = sc.nextInt();
-		if (num == 1) {
-			con.stop();
+		if (num == 0) {
+			bgm.stop();
 		}
 
 	}
