@@ -1,4 +1,4 @@
-package HNU;
+package Model;
 
 public class BgmDTO {
 	
