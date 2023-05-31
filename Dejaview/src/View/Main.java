@@ -3,11 +3,8 @@ package View;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-import Controller.GoblinCon;
-import Controller.JoinCon;
-import Controller.LoginCon;
-import Model.GameDAO;
-import Model.GameDTO;
+import Controller.*;
+import Model.*;
 
 public class Main {
 
@@ -72,11 +69,13 @@ public class Main {
 		gameDTO.setDay(5); // 게임 기한 설정
 		// 스토리 설명
 		sc.nextLine();
-		System.out.println("마왕이 없는 평화로운 도시에 큰 사건이 일어났습니다. ");
+		System.out.println("마왕이 용사의 손에 생을 마감하고 왕국은 평화로운 세상이 펼쳐졌습니다.");
 		sc.nextLine();
-		System.out.println("용사는 음주 말로 왕국의 벽을 부시는 사고를 냈습니다.");
+		System.out.println("왕국에서 영웅이 될 줄 알았던 용사는 마왕과의 전투중에 왕국을 초토화 시키며 왕국의 죄인이 되었습니다. ");
 		sc.nextLine();
-		System.out.println("왕국에 5일안에 400G를 갚으세요!");
+		System.out.println("용사는 죄를 사하기 위해 돈을 벌어야 합니다. 그 돈은 무려 400G !!	 ");
+		sc.nextLine();
+		System.out.println("용사의 평화로운 노후를 위해 사냥과 도박과 골든벨을 통해 돈을 벌어보세요!");
 
 		while (true) {
 			System.out.println();
@@ -94,60 +93,63 @@ public class Main {
 			System.out.println();
 			// 야바위 도박장 코드
 			if (s == 1) {
-				Controller.YabawiCon yacon = new Controller.YabawiCon();
-				System.out.println("\r\n"
-						+ "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀      ⠀⠀⠀⠀⠀\r\n"
-						+ "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀      ⠀ ⣴⠦⣄⡀⠀⠀⠀⠀⠀\r\n"
-						+ "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀       ⣠⠞⠙⠶⣬⡙⠶⣤⡀⠀⠀\r\n"
-						+ "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀      ⢀⡴⠻⢦⣀⠀⠀⠙⢳⡾⠀⠀⠀\r\n"
-						+ "⠀⠀⠀⣴⠒⠒⠒⠒⠒⣶⠀⠀⠀⠀⠀⠀⠀ ⢀⡖⠒⠒⠒⠒⢲⡆⠀⠀⠀⠀⠀⠀⠀⠀⠀  ⠀⣰⠟⠀⠀⠀⠉⠻⢦⣄⣼⠁⠀⠀⠀\r\n"
-						+ "⠀⠀ ⡟⠉⠉⠉⠉⠉⢹⡄⠀⠀⠀⠀⠀⠀ ⢸⠏⠉⠉⠉⠉⠉⣧⠀⠀⠀⠀⠀⠀⠀⠀ ⢠⡾⣧⣀⠀⠀⠀⠀⠀⠀ ⣸⠇⠀⠀⠀⠀\r\n"
-						+ "⠁ ⢸⣧⣤⣤⣤⣤⣤⣼⡇⠀⠀⠀⠀⠀  ⣾⣤⣤⣤⣤⣤⣤⣿⠀⠀⠀⠀⠀⠀⣴⠶⣏⡙⠲⣭⡳⢦⣀⠀⠀⢰⡏⠀⠀⠀⠀⠀\r\n"
-						+ "⠀⠀ ⢸⠃⠀⠀⠀⠀⠀⠀⣧⠀⠀⠀⠀⠀ ⢀⡏⠀⠀⠀⠀⠀⠀⢸⡆⠀⠀⠀⠀⠀⠈⠛⢮⣝⡳⣤ ⣙⠳⢮⣛⢶⡟⠀⠀⠀⠀⠀⠀\r\n"
-						+ "⠀⠀ ⣿⠀⠀⠀⠀⠀⠀⠀⢻⠀⠀⠀⠀⠀ ⢸⡇⠀⠀⠀⠀⠀⠀⠈⣇⠀⠀⠀⠀⠀  ⠀⣀⣤⣎⡙⠶⣭⡳⢦⣉⡿⠀⠀⠀⠀⠀⠀⠀\r\n"
-						+ "⠀⢠⡷⠶⠶⠶⠶⠶⠶⠶⢾⡇⠀⠀⠀⠀⣸⠷⠶⠶⠶⠶⠶⠶⠶⣿⠀⠀⠀⠀ ⢀⣾⣿⣿⣿⣿⣆⠀⠙⠳⢮⡷⠀⠀⠀⠀⠀⠀⠀\r\n"
-						+ "⠀⣸⣋⣉⣉⣉⣉⣉⣉⣉⣉⣧⠀⠀⠀⢀⣟⣉⣉⣉⣉⣉⣉⣉⣉⣹⣀⠀⠀⠀⠐⣷⣿⣿⣿⣿⡿⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀\r\n"
-						+ "⠸⠯⠭⠭⠭⠭⠭⠭⠭⠭⠭⠽⠇⠀⠀⠿⠭⠭⠭⠭⠭⠭⠭⠭⠭⠭⠽⠀⠀⠀⠀⠘⠻⠿⠿⠛⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀\r\n"
-						+ "");
-				System.out.println("====== 도박장 =======");
-				System.out.println("여기는 도박장... 일확천금을 노리시나요? 하이리스크 하이리턴... 거액을 걸어보세요");
-				sc.nextLine();
-				System.out.println("게임을 시작합니다. ");
-				sc.nextLine();
-				System.out.println("게임은 야바위게임~ 여러 컵 중에 공이 들어가있는 컵은 단 1개!!");
-				sc.nextLine();
-				System.out.println("컵이 늘어 날 수록 배당도 늘어납니다.");
-				System.out.println("컵2개 - 1.5배,  컵3개 - 2배,  컵5개 - 4배");
-				sc.nextLine();
+				if (gameDTO.getGold() == 0) {
+					System.out.println("돈이 없어서 도박장에서 입구 컷 당했습니다.");
+					gameDTO.setDay(gameDTO.getDay() + 1);
+				} else {
+					Controller.YabawiCon yacon = new Controller.YabawiCon();
+					System.out.println("\r\n" + "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀      ⠀⠀⠀⠀⠀\r\n"
+							+ "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀      ⠀ ⣴⠦⣄⡀⠀⠀⠀⠀⠀\r\n"
+							+ "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀       ⣠⠞⠙⠶⣬⡙⠶⣤⡀⠀⠀\r\n"
+							+ "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀      ⢀⡴⠻⢦⣀⠀⠀⠙⢳⡾⠀⠀⠀\r\n"
+							+ "⠀⠀⠀⣴⠒⠒⠒⠒⠒⣶⠀⠀⠀⠀⠀⠀⠀ ⢀⡖⠒⠒⠒⠒⢲⡆⠀⠀⠀⠀⠀⠀⠀⠀⠀  ⠀⣰⠟⠀⠀⠀⠉⠻⢦⣄⣼⠁⠀⠀⠀\r\n"
+							+ "⠀⠀ ⡟⠉⠉⠉⠉⠉⢹⡄⠀⠀⠀⠀⠀⠀ ⢸⠏⠉⠉⠉⠉⠉⣧⠀⠀⠀⠀⠀⠀⠀⠀ ⢠⡾⣧⣀⠀⠀⠀⠀⠀⠀ ⣸⠇⠀⠀⠀⠀\r\n"
+							+ "⠁ ⢸⣧⣤⣤⣤⣤⣤⣼⡇⠀⠀⠀⠀⠀  ⣾⣤⣤⣤⣤⣤⣤⣿⠀⠀⠀⠀⠀⠀⣴⠶⣏⡙⠲⣭⡳⢦⣀⠀⠀⢰⡏⠀⠀⠀⠀⠀\r\n"
+							+ "⠀⠀ ⢸⠃⠀⠀⠀⠀⠀⠀⣧⠀⠀⠀⠀⠀ ⢀⡏⠀⠀⠀⠀⠀⠀⢸⡆⠀⠀⠀⠀⠀⠈⠛⢮⣝⡳⣤ ⣙⠳⢮⣛⢶⡟⠀⠀⠀⠀⠀⠀\r\n"
+							+ "⠀⠀ ⣿⠀⠀⠀⠀⠀⠀⠀⢻⠀⠀⠀⠀⠀ ⢸⡇⠀⠀⠀⠀⠀⠀⠈⣇⠀⠀⠀⠀⠀  ⠀⣀⣤⣎⡙⠶⣭⡳⢦⣉⡿⠀⠀⠀⠀⠀⠀⠀\r\n"
+							+ "⠀⢠⡷⠶⠶⠶⠶⠶⠶⠶⢾⡇⠀⠀⠀⠀⣸⠷⠶⠶⠶⠶⠶⠶⠶⣿⠀⠀⠀⠀ ⢀⣾⣿⣿⣿⣿⣆⠀⠙⠳⢮⡷⠀⠀⠀⠀⠀⠀⠀\r\n"
+							+ "⠀⣸⣋⣉⣉⣉⣉⣉⣉⣉⣉⣧⠀⠀⠀⢀⣟⣉⣉⣉⣉⣉⣉⣉⣉⣹⣀⠀⠀⠀⠐⣷⣿⣿⣿⣿⡿⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀\r\n"
+							+ "⠸⠯⠭⠭⠭⠭⠭⠭⠭⠭⠭⠽⠇⠀⠀⠿⠭⠭⠭⠭⠭⠭⠭⠭⠭⠭⠽⠀⠀⠀⠀⠘⠻⠿⠿⠛⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀\r\n" + "");
+					System.out.println("====== 도박장 =======");
+					System.out.println("여기는 도박장... 일확천금을 노리시나요? 하이리스크 하이리턴... 거액을 걸어보세요");
+					sc.nextLine();
+					System.out.println("게임을 시작합니다. ");
+					sc.nextLine();
+					System.out.println("게임은 야바위게임~ 여러 컵 중에 공이 들어가있는 컵은 단 1개!!");
+					sc.nextLine();
+					System.out.println("컵이 늘어 날 수록 배당도 늘어납니다.");
+					System.out.println("컵2개 - 1.5배,  컵3개 - 2배,  컵5개 - 4배");
+					sc.nextLine();
 
-				for (int i = 0; i < 2; i++) {
-					System.out.print("컵의 개수를 골라주세요 : ");
-					int cupnum = sc.nextInt(); // 컵의 개수
-					int gold2;// 사용자가 걸 돈
-					while (true) {
-						System.out.print("골드를 얼마나 거시겠습니까? : ");
-						gold2 = sc.nextInt();
-						if (gameDTO.getGold() >= gold2) {
-							gameDTO.setGold(gameDTO.getGold() - gold2);
-							break;
+					for (int i = 0; i < 2; i++) {
+
+						System.out.print("컵의 개수를 골라주세요 : ");
+						int cupnum = sc.nextInt(); // 컵의 개수
+						int gold2;// 사용자가 걸 돈
+						while (true) {
+							System.out.print("골드를 얼마나 거시겠습니까? : ");
+							gold2 = sc.nextInt();
+							if (gameDTO.getGold() >= gold2) {
+								gameDTO.setGold(gameDTO.getGold() - gold2);
+								break;
+							} else {
+								System.out.println("골드가 부족합니다.");
+							}
+						}
+
+						if (cupnum == 2 || cupnum == 3 || cupnum == 5) {
+							gameDTO.setGold(yacon.goYabawi(cupnum, gold2, gameDTO.getGold()));
 						} else {
-							System.out.println("골드가 부족합니다.");
+							System.out.println("컵의 개수는 2개, 3개, 5개 중 고르세요");
+							i--;
 						}
 					}
-
-					if (cupnum == 2 || cupnum == 3 || cupnum == 5) {
-						gameDTO.setGold(yacon.goYabawi(cupnum, gold2, gameDTO.getGold()));
-					} else {
-						System.out.println("컵의 개수는 2개, 3개, 5개 중 고르세요");
-						i--;
-					}
-
 				}
 			}
 			// 고블린 사냥 코드
 			if (s == 2) {
 				if (gameDTO.getHp() == 0) {
-					System.out.println("용사의 체력이 없습니다.");
+					System.out.println("체력이 없는 용사는 사냥을 하기 싫어합니다.");
 					gameDTO.setDay(gameDTO.getDay() + 1);
 				} else {
 					System.out.println("======= 야생의 고블린이 나타났다. =======");
