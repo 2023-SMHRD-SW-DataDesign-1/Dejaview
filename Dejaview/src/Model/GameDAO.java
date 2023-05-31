@@ -53,6 +53,7 @@ public class GameDAO {
 		getCon();
 
 		String sql = "insert into GameMember(id,pw) values(?,?)";
+
 		int cnt = 0;
 		try {
 			psmt = conn.prepareStatement(sql);
