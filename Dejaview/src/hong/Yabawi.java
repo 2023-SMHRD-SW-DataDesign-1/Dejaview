@@ -64,7 +64,7 @@ public class Yabawi {
 		System.out.println("게임은 야바위게임~ 여러 컵 중에 공이 들어가있는 컵은 단 1개!!");
 		sc.nextLine();
 		System.out.println("컵이 늘어 날 수록 배당도 늘어납니다.");
-		System.out.println("컵2개 - 1.5배,  컵3개 - 2배,  컵5개 - 4배");
+		System.out.println("(배당률: 컵2개 - 1.5배,  컵3개 - 2배,  컵5개 - 4배)");
 		sc.nextLine();
 
 		for (int i = 0; i < 2; i++) {
