@@ -12,9 +12,21 @@ public class GoblinCon {
 	public int goGoblin(int hp, int gold) {
 		while (true) {
 			System.out.print("공격을 하세요 >> ");
-			System.out.println("1. 공격");
+			System.out.println("1. 공격 2. 방어 3. 도망");
 			int ck = sc.nextInt();
 			if (ck == 1) {
+				System.out.println("\r\n"
+						+ "⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠿⠻⣿\r\n"
+						+ "⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡿⠋⠀⠀⠀⣼⣿\r\n"
+						+ "⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠟⠁⠀ ⠀⣠⣿⣿\r\n"
+						+ "⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠟⠁⠀ ⢀⣴⣾⣿⣿⣿\r\n"
+						+ "⣿⣿⣿⣿⣿⣿⣿⣿⡿⠋⠀⠀⣀⣴⣿⣿⣿⣿⣿⣿\r\n"
+						+ "⣿⣿⣿⣯⠙⢿⣿⠛⠀⢀⣠⣾⣿⣿⣿⣿⣿⣿⣿⣿\r\n"
+						+ "⣿⣿⣿⣿⣧⡀⠙⢦⣴⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿\r\n"
+						+ "⣿⣿⣿⡿⠋⣳⣦⣄⠙⢿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿\r\n"
+						+ "⣿⠿⢿⣤⣾⣿⣿⣿⣿⣾⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿\r\n"
+						+ "⣿⣤⣼⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿\r\n"
+						+ "");
 				Ghp -= 2;
 				System.out.println("고블린 의 HP가 " + Ghp + "남았습니다.");
 				hp--;
@@ -24,7 +36,30 @@ public class GoblinCon {
 					System.out.println("용사의 체력이 다떨어졌습니다.");
 					System.out.println("더이상 사냥터에 나가지 못합니다.");
 				}
-			} else {
+
+			} else if (ck == 2) {
+				System.out.println("방어에 성공 했습니다.");
+				System.out.println("\r\n"
+						+ "⣿⣿⣿⣿⣿⣿⣿⣿⡿⠟⠻⠿⣿⣿⣿⣿⣿⣿⣿⣿"
+						+ "⣿⣿⣿⣿⡿⠟⠉⠁⠀⠀⠀⠀⠈⠉⠻⢿⣿⣿⣿⣿\r\n"
+						+ "⣿⣿⡏⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢹⣿⣿⣿⣿\r\n"
+						+ "⣿⣿⣷⠀⠀⠀⠀⠀⠀DEJA⠀⠀⠀⠀⠀⣾⣿⣿⣿⣿\r\n"
+						+ "⣿⣿⣿⡄⠀⠀⠀⠀⠀View ⠀⠀⠀⢠⣿⣿⣿⣿⣿\r\n"
+						+ "⣿⣿⣿⣧⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣼⣿⣿⣿⣿⣿\r\n"
+						+ "⣿⣿⣿⣿⣦⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣴⣿⣿⣿⣿⣿\r\n"
+						+ "⣿⣿⣿⣿⣿⣷⡀⠀⠀⠀⠀⠀⠀⢀⣾⣿⣿⣿⣿⣿⣿\r\n"
+						+ "⣿⣿⣿⣿⣿⣿⣷⣆⡀⠀⠀⢀⣰⣾⣿⣿⣿⣿⣿⣿\r\n"
+						+ "⣿⣿⣿⣿⣿⣿⣿⣿⣷⣦⣴⣾⣿⣿⣿⣿⣿⣿⣿⣿\r\n"
+						+ "");	
+				System.out.println("서로 데미지를 입지 않았습니다.");
+
+			} else if (ck == 3) {
+				System.out.println("용사는 도망을 갔습니다.");
+				System.out.println();
+				System.out.println("그러나 우사인볼트보다빠른 고블린이 따라잡았습니다.");
+			}
+
+			else {
 				System.out.println("잘못된 입력입니다.");
 			}
 			if (Ghp <= 0) {

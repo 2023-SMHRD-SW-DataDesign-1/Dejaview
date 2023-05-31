@@ -87,13 +87,17 @@ public class Main {
 			bgm.play(1);
 			System.out.println();
 			System.out.println("어서오십시오.");
+			System.out.println();
 			System.out.println("이곳은 로비입니다.");
 			sc.nextLine();
 			System.out.println("남은 기한 " + gameDTO.getDay() + "일");
+			System.out.println();
 			System.out.println("현재 골드 : " + gameDTO.getGold());
+			System.out.println();
 			System.out.println("오늘도 행운이 가득하시길.");
 			sc.nextLine();
 			System.out.println("향할 곳을 정해주세요.");
+			System.out.println();
 			System.out.println("[1] 도박장 [2] 사냥터 [3] 골든벨");
 			System.out.print("갈곳을 선택 하세요 >> ");
 			int s = sc.nextInt();
@@ -102,10 +106,12 @@ public class Main {
 			if (s == 1) {
 				bgm.play(2);
 				if (gameDTO.getGold() == 0) {
+					System.out.println();
 					System.out.println("돈이 없어서 도박장에서 입구 컷 당했습니다.");
 					gameDTO.setDay(gameDTO.getDay() + 1);
 				} else {
 					Controller.YabawiCon yacon = new Controller.YabawiCon();
+					System.out.println();
 					System.out.println("============ 도박장 =============");
 					System.out
 					.println("\r\n" + "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀\r\n"
@@ -145,21 +151,25 @@ public class Main {
 					System.out.println("게임은 야바위게임~ 여러 컵 중에 공이 들어가있는 컵은 단 1개!!");
 					sc.nextLine();
 					System.out.println("컵이 늘어 날 수록 배당도 늘어납니다.");
+					System.out.println();
 					System.out.println("컵2개 - 1.5배,  컵3개 - 2배,  컵5개 - 4배");
 					sc.nextLine();
 
 					for (int i = 0; i < 2; i++) {
-
+						System.out.println();
 						System.out.print("컵의 개수를 골라주세요 : ");
 						int cupnum = sc.nextInt(); // 컵의 개수
 						int gold2;// 사용자가 걸 돈
 						while (true) {
+							System.out.println();
 							System.out.print("골드를 얼마나 거시겠습니까? : ");
+						
 							gold2 = sc.nextInt();
 							if (gameDTO.getGold() >= gold2) {
 								gameDTO.setGold(gameDTO.getGold() - gold2);
 								break;
 							} else {
+								System.out.println();
 								System.out.println("골드가 부족합니다.");
 							}
 						}
@@ -167,6 +177,7 @@ public class Main {
 						if (cupnum == 2 || cupnum == 3 || cupnum == 5) {
 							gameDTO.setGold(yacon.goYabawi(cupnum, gold2, gameDTO.getGold()));
 						} else {
+							System.out.println();
 							System.out.println("컵의 개수는 2개, 3개, 5개 중 고르세요");
 							i--;
 						}
@@ -235,11 +246,14 @@ public class Main {
 						+ "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣼⡿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀\r\n"
 						+ "");
 				System.out.println("오늘은 골든벨.. 현자가 내는 문제를 풀 수 있는 기회...");
+				System.out.println();
 				System.out.println("정답자는 상금을 드립니다...");
 				System.out.println("");
 				sc.nextLine();
 				System.out.println("문제는 총 2문제 ");
+				System.out.println();
 				System.out.println("easy 문제와 hard 문제가 차례로 나옵니다.");
+				System.out.println();
 				System.out.println("이 문제를 맞춘다면 당신도 언젠간 현자가 될지도?..");
 				System.out.println();
 				sc.nextLine();
@@ -273,7 +287,9 @@ public class Main {
 			if (gameDTO.getDay() <= 0) {
 				bgm.play(5);
 				System.out.println("어서오십시오.");
+				System.out.println();
 				System.out.println("빚을 갚을 날이 도래했습니다.");
+				System.out.println();
 				System.out.println("빚 400G를 차감한 현재 골드는 : " + (gameDTO.getGold() - 400));
 				int score = gameDTO.getGold() - 400;
 
@@ -285,6 +301,7 @@ public class Main {
 					// 노예 도트 그림 추가
 				} else {
 					System.out.println("====== 경축 ======");
+					System.out.println();
 					System.out.println("빚을 탕감한 용사는");
 					sc.nextLine();
 					System.out.println("행복한 인생을 살았습니다.");
