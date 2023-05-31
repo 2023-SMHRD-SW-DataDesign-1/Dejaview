@@ -2,7 +2,6 @@ package Controller;
 
 import java.util.Random;
 import java.util.Scanner;
-import Model.GameDTO;
 
 public class GoblinCon {
 
