@@ -18,9 +18,9 @@ public class GameDAO {
 		try {
 			Class.forName("oracle.jdbc.driver.OracleDriver");
 
-			String dburl = "jdbc:oracle:thin:@localhost:1521:xe";
-			String dbuser = "hr";
-			String dbpw = "hr";
+			String dburl = "jdbc:oracle:thin:@project-db-stu.smhrd.com:1524:xe";
+			String dbuser = "campus_g_0530_3";
+			String dbpw = "smhrd3";
 
 			conn = DriverManager.getConnection(dburl, dbuser, dbpw);
 
