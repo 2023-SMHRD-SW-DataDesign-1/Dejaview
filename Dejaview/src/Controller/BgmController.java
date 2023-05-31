@@ -1,6 +1,7 @@
-package HNU;
+package Controller;
 import java.util.ArrayList;
 
+import Model.BgmDTO;
 import javazoom.jl.player.MP3Player;
 
 public class BgmController {
