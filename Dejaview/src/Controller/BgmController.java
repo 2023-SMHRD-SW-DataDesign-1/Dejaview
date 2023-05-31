@@ -22,12 +22,12 @@ public class BgmController {
 	int index = 0;
 
 	// 재생
-	public void play() {
+	public void play(int n) {
 
 		if (mp3.isPlaying()) {
 			mp3.stop();
 		}
-
+		index = n;
 		mp3.play(musicList.get(index).getMusicpath());
 	}
 
