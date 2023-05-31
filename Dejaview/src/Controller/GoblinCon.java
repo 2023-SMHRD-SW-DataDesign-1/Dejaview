@@ -52,7 +52,6 @@ public class GoblinCon {
 				
 				}
 			}
-	    	sc.close();
 			return gold;
 	    }
 	

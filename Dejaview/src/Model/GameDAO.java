@@ -51,9 +51,10 @@ public class GameDAO {
 	// 회원가입
 	public int insertMember(GameDTO dto) {
 		getCon();
-		String sql = "insert into GAMEMEMBER(ID,PW) values(?,?)";
-		int cnt = 0;
+		
 		try {
+			String sql = "insert into GAMEMEMBER(ID,PW) values(?,?)";
+			int cnt = 0;	
 			psmt = conn.prepareStatement(sql);
 			psmt.setString(1, dto.getId());
 			psmt.setString(2, dto.getPw());
