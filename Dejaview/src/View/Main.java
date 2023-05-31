@@ -2,8 +2,11 @@ package View;
 
 import java.util.Scanner;
 
-import Controller.*;
-import Model.*;
+import Controller.GoblinCon;
+import Controller.JoinCon;
+import Controller.LoginCon;
+import Model.GameDAO;
+import Model.GameDTO;
 
 public class Main {
 

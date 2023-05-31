@@ -1,7 +1,7 @@
 package Controller;
 
-import Model.GameDTO;
 import Model.GameDAO;
+import Model.GameDTO;
 
 public class LoginCon {
 	
