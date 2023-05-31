@@ -183,6 +183,9 @@ public class Main {
 					System.out.println("체력이 없는 용사는 사냥을 하기 싫어합니다.");
 					gameDTO.setDay(gameDTO.getDay() + 1);
 				} else {
+					System.out.println("오늘도 뚜벅뚜벅 사냥을 나는 용사...");
+					sc.nextLine();
+					System.out.println("풀 숲에 흔들리고 있습니다.");		
 					System.out.println("======= 야생의 고블린이 나타났다. =======");
 					sc.nextLine();
 					System.out.println("⠀⠀⠀⠀⠀⠀⣀⢀⠀");
@@ -209,9 +212,15 @@ public class Main {
 				bgm.play(4);
 				Controller.GoldenbelCon gc = new Controller.GoldenbelCon();
 				System.out.println("===========================골든벨===============================");
-				System.out.println("골든벨은 easy 문제와 hard 문제로 구성되어 있으며 연산문제의 정답을 맞추는 미니게임입니다.");
-				System.out.println("easy문제는 덧셈문제, hard 문제는 곱셈 문제입니다. ");
+				System.out.println("오늘은 골든벨.. 현자가 내는 문제를 풀 수 있는 기회...");
+				System.out.println("정답자는 상금을 드립니다...");
+				System.out.println("");
+				sc.nextLine();
+				System.out.println("문제는 총 2문제 ");
+				System.out.println("easy 문제와 hard 문제가 차례로 나옵니다.");
+				System.out.println("이 문제를 맞춘다면 당신도 언젠간 현자가 될지도?..");
 				System.out.println();
+				sc.nextLine();
 
 				// 1. easy 문제(덧셈)
 
