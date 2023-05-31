@@ -1,13 +1,11 @@
 package Model;
 
 import java.sql.Connection;
-
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
-
 
 public class GameDAO {
 
@@ -49,10 +47,15 @@ public class GameDAO {
 			e.printStackTrace();
 		}
 	}
+
 	// 회원가입
 	public int insertMember(GameDTO dto) {
 		getCon();
+<<<<<<< HEAD
 		String sql = "insert into gamemember(ID,PW) values(?,?)";
+=======
+		String sql = "insert into GameMember(id,pw) values(?,?)";
+>>>>>>> branch 'master' of https://github.com/2023-SMHRD-SW-DataDesign-1/Dejaview.git
 		int cnt = 0;
 		try {
 			psmt = conn.prepareStatement(sql);
@@ -67,23 +70,24 @@ public class GameDAO {
 		}
 		return cnt;
 	}
-	//로그인 
+
+	// 로그인
 	public String login(GameDTO dto) {
 		getCon();
 		String name = null;
 		try {
-			String sql = "select id from GAMEMEMBER(ID,PW) where id = ? and pw = ?";
-			
-			psmt=conn.prepareStatement(sql);
-			psmt.setString(1,dto.getId());
-			psmt.setString(2,dto.getPw());
-			
+			String sql = "select id from GameMember where id = ? and pw = ?";
+
+			psmt = conn.prepareStatement(sql);
+			psmt.setString(1, dto.getId());
+			psmt.setString(2, dto.getPw());
+
 			rs = psmt.executeQuery();
-			
-			if(rs.next()) {
+
+			if (rs.next()) {
 				name = rs.getString("id");
-			}	
-			
+			}
+
 		} catch (SQLException e) {
 			System.out.println("쿼리문 오류");
 			e.printStackTrace();
@@ -91,45 +95,33 @@ public class GameDAO {
 		getClose();
 		return name;
 	}
-	
+
 	// 랭킹 시스템
-public ArrayList<GameDTO> rankingLIst(GameDTO dto) {
-		
+	public ArrayList<GameDTO> rankingLIst(GameDTO dto) {
+
 		getCon();
-		ArrayList<GameDTO> rankingLIst =new ArrayList<GameDTO>();
-		
+		ArrayList<GameDTO> rankingLIst = new ArrayList<GameDTO>();
+
 		try {
 			String sql = "select id, score from GameMember order by score ";
 			psmt = conn.prepareStatement(sql);
 			rs = psmt.executeQuery();
-			
-			while(rs.next()) {
+
+			while (rs.next()) {
 				String id = rs.getString(1);
 				int score = rs.getInt(2);
-				
-				
+
 				dto = new GameDTO(id, score);
 				rankingLIst.add(dto);
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
-		}finally {
+		} finally {
 			getClose();
 		}
-	
-		
-		
-		
+
 		return rankingLIst;
-		
+
 	}
-	
-	
-	
-	
-	
-	
-	
-	
 
 }

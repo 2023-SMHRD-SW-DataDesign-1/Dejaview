@@ -55,23 +55,22 @@ public class Main {
 			if (n == 3) {
 				gameDAO.rankingLIst(gameDTO);
 			}
-			
-			
+
 			if (b == 1)
 				break;
 		}
 		// 로그인 성공시 브레이크로 빠져나옴.
 		// 변수값 DTO로 넘김
-		
+
 		gameDTO.setDay(5); // 게임 기한 설정
-		//스토리 설명
+		// 스토리 설명
 		sc.nextLine();
 		System.out.println("마왕이 없는 평화로운 도시에 큰 사건이 일어났습니다. ");
 		sc.nextLine();
 		System.out.println("용사는 음주 말로 왕국의 벽을 부시는 사고를 냈습니다.");
 		sc.nextLine();
 		System.out.println("왕국에 5일안에 400G를 갚으세요!");
-		
+
 		while (true) {
 			System.out.println();
 			System.out.println("어서오십시오.");
@@ -89,6 +88,20 @@ public class Main {
 			// 야바위 도박장 코드
 			if (s == 1) {
 				Controller.YabawiCon yacon = new Controller.YabawiCon();
+				System.out.println("\r\n"
+						+ "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀      ⠀⠀⠀⠀⠀\r\n"
+						+ "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀      ⠀ ⣴⠦⣄⡀⠀⠀⠀⠀⠀\r\n"
+						+ "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀       ⣠⠞⠙⠶⣬⡙⠶⣤⡀⠀⠀\r\n"
+						+ "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀      ⢀⡴⠻⢦⣀⠀⠀⠙⢳⡾⠀⠀⠀\r\n"
+						+ "⠀⠀⠀⣴⠒⠒⠒⠒⠒⣶⠀⠀⠀⠀⠀⠀⠀ ⢀⡖⠒⠒⠒⠒⢲⡆⠀⠀⠀⠀⠀⠀⠀⠀⠀  ⠀⣰⠟⠀⠀⠀⠉⠻⢦⣄⣼⠁⠀⠀⠀\r\n"
+						+ "⠀⠀ ⡟⠉⠉⠉⠉⠉⢹⡄⠀⠀⠀⠀⠀⠀ ⢸⠏⠉⠉⠉⠉⠉⣧⠀⠀⠀⠀⠀⠀⠀⠀ ⢠⡾⣧⣀⠀⠀⠀⠀⠀⠀ ⣸⠇⠀⠀⠀⠀\r\n"
+						+ "⠁ ⢸⣧⣤⣤⣤⣤⣤⣼⡇⠀⠀⠀⠀⠀  ⣾⣤⣤⣤⣤⣤⣤⣿⠀⠀⠀⠀⠀⠀⣴⠶⣏⡙⠲⣭⡳⢦⣀⠀⠀⢰⡏⠀⠀⠀⠀⠀\r\n"
+						+ "⠀⠀ ⢸⠃⠀⠀⠀⠀⠀⠀⣧⠀⠀⠀⠀⠀ ⢀⡏⠀⠀⠀⠀⠀⠀⢸⡆⠀⠀⠀⠀⠀⠈⠛⢮⣝⡳⣤ ⣙⠳⢮⣛⢶⡟⠀⠀⠀⠀⠀⠀\r\n"
+						+ "⠀⠀ ⣿⠀⠀⠀⠀⠀⠀⠀⢻⠀⠀⠀⠀⠀ ⢸⡇⠀⠀⠀⠀⠀⠀⠈⣇⠀⠀⠀⠀⠀  ⠀⣀⣤⣎⡙⠶⣭⡳⢦⣉⡿⠀⠀⠀⠀⠀⠀⠀\r\n"
+						+ "⠀⢠⡷⠶⠶⠶⠶⠶⠶⠶⢾⡇⠀⠀⠀⠀⣸⠷⠶⠶⠶⠶⠶⠶⠶⣿⠀⠀⠀⠀ ⢀⣾⣿⣿⣿⣿⣆⠀⠙⠳⢮⡷⠀⠀⠀⠀⠀⠀⠀\r\n"
+						+ "⠀⣸⣋⣉⣉⣉⣉⣉⣉⣉⣉⣧⠀⠀⠀⢀⣟⣉⣉⣉⣉⣉⣉⣉⣉⣹⣀⠀⠀⠀⠐⣷⣿⣿⣿⣿⡿⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀\r\n"
+						+ "⠸⠯⠭⠭⠭⠭⠭⠭⠭⠭⠭⠽⠇⠀⠀⠿⠭⠭⠭⠭⠭⠭⠭⠭⠭⠭⠽⠀⠀⠀⠀⠘⠻⠿⠿⠛⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀\r\n"
+						+ "");
 				System.out.println("====== 도박장 =======");
 				System.out.println("여기는 도박장... 일확천금을 노리시나요? 하이리스크 하이리턴... 거액을 걸어보세요");
 				sc.nextLine();
@@ -153,38 +166,35 @@ public class Main {
 				}
 			}
 			if (s == 3) {
-				Controller.GoldenbelCon gc =new Controller.GoldenbelCon();
+				Controller.GoldenbelCon gc = new Controller.GoldenbelCon();
 				System.out.println("===========================골든벨===============================");
 				System.out.println("골든벨은 easy 문제와 hard 문제로 구성되어 있으며 연산문제의 정답을 맞추는 미니게임입니다.");
 				System.out.println("easy문제는 덧셈문제, hard 문제는 곱셈 문제입니다. ");
 				System.out.println();
 
-				//1. easy 문제(덧셈)
+				// 1. easy 문제(덧셈)
 
 				System.out.println("[easy 문제]");
-				//1-1. 문제 출력
+				// 1-1. 문제 출력
 				gc.getEasyQuiz();
 				int answer = sc.nextInt();
-				//1-2. 답 확인
+				// 1-2. 답 확인
 				gameDTO.setGold(gameDTO.getGold() + gc.getEasyAnswer(answer));
 
-				//2. hard 문제(곱하기)
+				// 2. hard 문제(곱하기)
 				System.out.println();
 				System.out.println("[hard 문제]");
-				
-				//1-1. 문제 출력
+
+				// 1-1. 문제 출력
 				gc.getHardQuiz();
 				answer = sc.nextInt();
 				gameDTO.setGold(gameDTO.getGold() + gc.getHardAnswer(answer));
-				
+
 				System.out.println();
 				System.out.println("퀴즈를 풀 수 있는 기회가 소진되었습니다. 내일 다시 도전해주세요.");
-				
-				
+
 			}
-			
-			
-			
+
 			// 날짜 감소
 			gameDTO.setDay(gameDTO.getDay() - 1);
 			// 마지막날 빚 갚는날
@@ -192,6 +202,7 @@ public class Main {
 				System.out.println("어서오십시오.");
 				System.out.println("빚을 갚을 날이 도래했습니다.");
 				System.out.println("빚 400G를 차감한 현재 골드는 : " + (gameDTO.getGold() - 400));
+				sc.close();
 				break;
 			}
 
