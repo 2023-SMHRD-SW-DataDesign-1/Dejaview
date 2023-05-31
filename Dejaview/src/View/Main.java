@@ -61,7 +61,9 @@ public class Main {
 		}
 		// 로그인 성공시 브레이크로 빠져나옴.
 		// 변수값 DTO로 넘김
-
+		BgmController bgm = new BgmController();
+		bgm.play();
+		
 		gameDTO.setDay(5); // 게임 기한 설정
 		// 스토리 설명
 		sc.nextLine();
@@ -74,6 +76,7 @@ public class Main {
 		System.out.println("용사의 평화로운 노후를 위해 사냥과 도박과 골든벨을 통해 돈을 벌어보세요!");
 
 		while (true) {
+			
 			System.out.println();
 			System.out.println("어서오십시오.");
 			System.out.println("이곳은 로비입니다.");
