@@ -1,7 +1,5 @@
 package bora;
 
-import java.util.Random;
-
 public class GoldenbelDTO {
 
 	
