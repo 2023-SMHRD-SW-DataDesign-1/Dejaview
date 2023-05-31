@@ -1,5 +1,6 @@
 package View;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 import Controller.*;
@@ -53,7 +54,10 @@ public class Main {
 			}
 			// 랭킹확인
 			if (n == 3) {
-				gameDAO.rankingLIst(gameDTO);
+				GameDAO dao = new GameDAO();
+				ArrayList<GameDTO> rankingLIst = dao.rankingLIst(gameDTO);
+				for(int i = 0; i<rankingLIst.size(); i++){
+				System.out.println(i+". id : " +rankingLIst.get(i).getId()+", 점수 : "+ rankingLIst.get(i).getScore());
 			}
 
 			if (b == 1)
@@ -216,4 +220,5 @@ public class Main {
 
 		}
 	}
+}
 }
