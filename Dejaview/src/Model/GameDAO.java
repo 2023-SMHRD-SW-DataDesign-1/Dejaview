@@ -19,9 +19,9 @@ public class GameDAO {
 		try {
 			Class.forName("oracle.jdbc.driver.OracleDriver");
 
-			String dburl = "jdbc:oracle:thin:@localhost:1521:xe";
-			String dbuser = "hr";
-			String dbpw = "hr";
+			String dburl = "jdbc:oracle:thin:@project-db-stu.smhrd.com:1524:xe";
+			String dbuser = "campus_g_0530_3";
+			String dbpw = "smhrd3";
 
 			conn = DriverManager.getConnection(dburl, dbuser, dbpw);
 
@@ -52,7 +52,7 @@ public class GameDAO {
 	// 회원가입
 	public int insertMember(GameDTO dto) {
 		getCon();
-		String sql = "insert into GameMember values(?,?)";
+		String sql = "insert into GAMEMEMBER(ID,PW) values(?,?)";
 		int cnt = 0;
 		try {
 			psmt = conn.prepareStatement(sql);
@@ -72,7 +72,7 @@ public class GameDAO {
 		getCon();
 		String name = null;
 		try {
-			String sql = "select id from GameMember where id = ? and pw = ?";
+			String sql = "select id from GAMEMEMBER(ID,PW) where id = ? and pw = ?";
 			
 			psmt=conn.prepareStatement(sql);
 			psmt.setString(1,dto.getId());
