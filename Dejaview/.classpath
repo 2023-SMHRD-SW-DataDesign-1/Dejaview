@@ -11,7 +11,11 @@
 			<attribute name="module" value="true"/>
 		</attributes>
 	</classpathentry>
+<<<<<<< HEAD
 	<classpathentry kind="lib" path="C:/Users/smhrd/Desktop/JavaStudy/player.jar">
+=======
+	<classpathentry kind="lib" path="D:/Java_Study/player.jar">
+>>>>>>> branch 'master' of https://github.com/2023-SMHRD-SW-DataDesign-1/Dejaview.git
 		<attributes>
 			<attribute name="module" value="true"/>
 		</attributes>

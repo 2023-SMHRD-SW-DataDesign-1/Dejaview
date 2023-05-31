@@ -17,7 +17,7 @@ public class test {
 			System.out.println("1. 회원가입 2. 로그인 3. 랭킹보기");
 			int n = sc.nextInt();
 			int b = 0;
-			if (n == 1) {
+			if (n == 1) {   //123
 
 				System.out.println("== 회원가입 ==");
 				System.out.print("ID 입력 >> ");
