@@ -25,18 +25,14 @@ public class GameDTO {
 
 
 
-	public GameDTO(String id, String pw, int score) {
+	public GameDTO(String id, String pw) {
+		super();
 		this.id = id;
 		this.pw = pw;
-		this.score = score;
 	}
 
-	public GameDTO(String id, String pw) {
-		this.id = id;
-		this.pw = pw;
-	}
-	
 	public GameDTO(String id, int score) {
+		super();
 		this.id = id;
 		this.score = score;
 	}

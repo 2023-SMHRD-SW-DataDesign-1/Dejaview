@@ -12,7 +12,7 @@ public class ranking_DAO {
 		ArrayList<GameDTO> rankingLIst =new ArrayList<GameDTO>();
 		
 		try {
-			String sql = "select * from Member orderby score ";
+			String sql = "select * from Member order by score ";
 			psmt = conn.prepareStatement(sql);
 			rs = psmt.executeQuery();
 			
