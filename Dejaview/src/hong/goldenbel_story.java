@@ -23,13 +23,17 @@ public class goldenbel_story {
 			System.out.println("오늘은 골든벨.. 현자가 내는 문제를 풀 수 있는 기회...");
 			System.out.println("정답자는 상금을 드립니다...");
 			System.out.println("");
+			sc.nextLine();
 			System.out.println("문제는 총 2문제 ");
-			System.out.println("easy문제는 덧셈문제, hard 문제는 곱셈 문제입니다. ");
+			System.out.println("easy 문제와 hard 문제가 차례로 나옵니다.");
+			System.out.println("이 문제를 맞춘다면 당신도 언젠간 현자가 될지도?..");
 			System.out.println();
-
+			sc.nextLine();
+			
 			//1. easy 문제(덧셈)
 
 			System.out.println("[easy 문제]");
+			sc.nextLine();
 			//1-1. 문제 출력
 			gc.getEasyQuiz();
 			int answer = scan.nextInt();
