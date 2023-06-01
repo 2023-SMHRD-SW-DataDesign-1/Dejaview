@@ -38,10 +38,11 @@ public class GoldenbelCon {
 		if(num1+num2 == answer) {
 			System.out.println("정답입니다! 30 골드를 획득하였습니다.");
 			gold += 30;
-			
+			System.out.println("=============================================================");
 		}else {
 			System.out.println("오답입니다. 다시 한 번 도전해보세요.");
 			gold += 0;
+			System.out.println("=============================================================");
 		}
 		return gold;
 		
@@ -53,10 +54,12 @@ public class GoldenbelCon {
 		if(num1*num2 == answer) {
 			System.out.println("정답입니다! 50 골드를 획득하였습니다.");
 			gold+=50;
+			System.out.println("=============================================================");
 			
 		}else {
 			System.out.println("오답입니다. 다시 한 번 도전해보세요.");
 			gold += 0;
+			System.out.println("=============================================================");
 		}
 		return gold;
 	}

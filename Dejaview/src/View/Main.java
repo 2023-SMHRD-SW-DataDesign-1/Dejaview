@@ -155,9 +155,7 @@ public class Main {
 			sc.nextLine();
 			bgm.play(1);
 			System.out.println();
-			System.out.println("어서오십시오.");
-			System.out.println();
-			System.out.println("이곳은 로비입니다.");
+			System.out.println("===========================로  비===============================");
 			System.out
 			.println("                                    ___--___\r\n"
 					+ "                              ___---___--___-\r\n"
@@ -211,7 +209,7 @@ public class Main {
 				} else {
 					Controller.YabawiCon yacon = new Controller.YabawiCon();
 					System.out.println();
-					System.out.println("============ 도박장 =============");
+					System.out.println("===========================도박장===============================");
 					System.out
 					.println("⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⣤⠄⠀⢤⣄⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀\r\n"
 							+ "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢠⣶⡗⠂⠀⣀⠀⡀⠀⠐⢷⣦⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀\r\n"
@@ -257,10 +255,12 @@ public class Main {
 						System.out.print("컵의 개수를 골라주세요 : ");
 						int cupnum = sc.nextInt(); // 컵의 개수
 						int gold2;// 사용자가 걸 돈
+						 System.out.println("=============================================================");
 						while (true) {
 							System.out.println();
 							System.out.print("골드를 얼마나 거시겠습니까? : ");
-						
+							System.out.println();
+							 System.out.println("=============================================================");
 							gold2 = sc.nextInt();
 							if (gameDTO.getGold() >= gold2) {
 								gameDTO.setGold(gameDTO.getGold() - gold2);
@@ -268,6 +268,8 @@ public class Main {
 							} else {
 								System.out.println();
 								System.out.println("골드가 부족합니다.");
+								System.out.println();
+								 System.out.println("=============================================================");
 							}
 						}
 
@@ -288,9 +290,10 @@ public class Main {
 					System.out.println("체력이 없는 용사는 사냥을 하기 싫어합니다.");
 					gameDTO.setDay(gameDTO.getDay() + 1);
 				} else {
-					System.out.println("오늘도 뚜벅뚜벅 사냥을 나는 용사...");
+					System.out.println("===========================사냥터===============================");
+					System.out.println("오늘도 뚜벅뚜벅 사냥을 나가는 용사...");
 					sc.nextLine();
-					System.out.println("풀 숲에 흔들리고 있습니다.");
+					System.out.println("풀 숲이 흔들리고 있습니다.");
 					System.out.println("               |\r\n"
 							+ "              /L\\\r\n"
 							+ "           ,_/2LS\\_,\r\n"
@@ -311,7 +314,7 @@ public class Main {
 							+ "_____|________|LL__________||_____________________________________\r\n"
 							+ "");
 					sc.nextLine();
-					System.out.println("======= 야생의 고블린이 나타났다. =======");
+					System.out.println("====================야생의 고블린이 나타났다====================");
 					sc.nextLine();
 					System.out.println("             ,      ,\r\n"
 							+ "            /(.-\"\"-.)\\\r\n"
