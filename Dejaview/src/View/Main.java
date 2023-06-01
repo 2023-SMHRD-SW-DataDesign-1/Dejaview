@@ -144,15 +144,12 @@ public class Main {
 				+ "⣿⣿⣿⣿⣿⣷⣶⣷⣶⣶⣶⠒⠒⠒⠀⠀⢸⣉⣲⣤⣀⣠⣴⣿⣿⣿⣿⣿⣿⣿\r\n"
 				+ "⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣏⣀⣀⣀⣀⣀⡸⠁⠈⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿\r\n"
 				+ "⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡇⠀⠀⡀⠀⢸⣷⣄⢠⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿");
-		sc.nextLine(); 
-		System.out
-		.println("");
-		
-		
+
 		System.out.println("용사는 죄를 사하기 위해 돈을 벌어야 합니다. 그 돈은 무려 400G !!	 ");
 		sc.nextLine();
 		System.out.println("용사의 평화로운 노후를 위해 사냥과 도박과 골든벨을 통해 돈을 벌어보세요!");
 
+		
 		while (true) {
 			sc.nextLine();
 			bgm.play(1);
@@ -409,11 +406,8 @@ public class Main {
 				System.out.println();
 				System.out.println("빚 400G를 차감한 현재 골드는 : " + (gameDTO.getGold() - 400));
 				int score = gameDTO.getGold() - 400;
-				if (score > 0) {
-					gameDAO.insertscore(rId,gameDTO.getGold() - 400);	
-				}
-				
 				if (score <= 0) {
+					gameDAO.insertscore(rId,0);
 					System.out.println("용사는 빚을 갚지 못했습니다.");
 					sc.nextLine();
 					System.out
@@ -434,6 +428,7 @@ public class Main {
 					System.out.println("노예가 되어 채석장에 끌려갔습니다.");
 					
 				} else {
+					gameDAO.insertscore(rId,gameDTO.getGold() - 400);
 					System.out.println("====== 경축 ======");
 					System.out.println();
 					System.out.println("빚을 탕감한 용사는");
