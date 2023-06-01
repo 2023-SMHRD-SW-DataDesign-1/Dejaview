@@ -39,23 +39,22 @@ public class GoblinCon {
 			} else if (ck == 2) {
 				System.out.println("방어에 성공 했습니다.");
 				System.out.println("\r\n"
-
-						+ "⣿⣿⣿⣿⣿⣿⣿⣿⡿⠟⠻⠿⣿⣿⣿⣿⣿⣿⣿⣿\r\n"
-						+ "⣿⣿⣿⣿⡿⠟⠉⠁⠀⠀⠀⠀⠈⠉⠻⢿⣿⣿⣿⣿\r\n"
-						+ "⣿⣿⡏⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢹⣿⣿⣿⣿\r\n"
-						+ "⣿⣿⣷⠀⠀⠀⠀⠀⠀DEJA⠀⠀⠀⠀⠀⣾⣿⣿⣿⣿\r\n"
-						+ "⣿⣿⣿⡄⠀⠀⠀⠀⠀View ⠀⠀⠀⢠⣿⣿⣿⣿⣿\r\n"
-						+ "⣿⣿⣿⣧⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣼⣿⣿⣿⣿⣿\r\n"
-						+ "⣿⣿⣿⣿⣦⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣴⣿⣿⣿⣿⣿\r\n"
-						+ "⣿⣿⣿⣿⣿⣷⡀⠀⠀⠀⠀⠀⠀⢀⣾⣿⣿⣿⣿⣿⣿\r\n"
-						+ "⣿⣿⣿⣿⣿⣿⣷⣆⡀⠀⠀⢀⣰⣾⣿⣿⣿⣿⣿⣿\r\n"
-						+ "⣿⣿⣿⣿⣿⣿⣿⣿⣷⣦⣴⣾⣿⣿⣿⣿⣿⣿⣿⣿\r\n"
+						+ "|`--,___,--'|\r\n"
+						+ "|E          |\r\n"
+						+ "|T  )   (   |\r\n"
+						+ "|E ((,-,))  |\r\n"
+						+ "|R `|v v|'  |\r\n"
+						+ "|N   Y.Y    |\r\n"
+						+ "|A   {.}    |\r\n"
+						+ "|L   {.}    |\r\n"
+						+ " \\    ~    /\r\n"
+						+ "   \\,___,/\r\n"
 						+ "");	
 				System.out.println("서로 데미지를 입지 않았습니다.");
 
 			} else if (ck == 3) {
 				System.out.println("용사는 도망을 갔습니다.");
-				System.out.println();
+				System.out.println(" ─=≡Σ ﾍ( ´Д`)ﾉ");
 				System.out.println("그러나 우사인볼트보다빠른 고블린이 따라잡았습니다.");
 			}
 
@@ -67,11 +66,20 @@ public class GoblinCon {
 				int hunt = rand.nextInt(10);
 				if (hunt == 0) {
 					gold += 200;
-					System.out.println("   .aMMMMP    .aMMMb     dMP     dMMMMb ");
-					System.out.println("  dMP\"       dMP\"dMP    dMP     dMP VMP ");
-					System.out.println(" dMP MMP\"   dMP dMP    dMP     dMP dMP  ");
-					System.out.println("dMP.dMP    dMP.aMP    dMP     dMP.aMP");
-					System.out.println("VMMMP\"     VMMMP\"    dMMMMMP dMMMMP\"   ");
+					System.out.println("                                         \r\n"
+							+ "                                  ████            \r\n"
+							+ "                            ██████    ██          \r\n"
+							+ "                      ██████            ██        \r\n"
+							+ "                ██████                    ██      \r\n"
+							+ "              ██░░                  ▒▒▒▒▒▒▒▒██    \r\n"
+							+ "              ██  ░░          ▒▒▒▒▒▒        ██    \r\n"
+							+ "              ██    ░░  ▒▒▒▒▒▒          ▒▒▒▒██    \r\n"
+							+ "              ██      ░░          ▒▒▒▒▒▒▒▒▒▒██    \r\n"
+							+ "              ██▒▒▒▒  ░░    ▒▒▒▒▒▒▒▒▒▒██████      \r\n"
+							+ "                ██▒▒░░░░▒▒▒▒▒▒▒▒██████            \r\n"
+							+ "                  ██▒▒░░▒▒██████                  \r\n"
+							+ "                    ██████                        \r\n"
+							+ "                                                ");
 					sc.nextLine();
 					System.out.println("운이 좋았습니다. 황금 고블린이 였습니다. 골드 200G를 획득합니다.");
 					System.out.println();
