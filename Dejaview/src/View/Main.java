@@ -14,7 +14,17 @@ public class Main {
 		GameDAO gameDAO = new GameDAO();
 		String rId = null;
 		// 회원가입 구간
+		System.out.println("\r\n"
+				+ "______         _       _                        ______                                    _   __        _         _      _   \r\n"
+				+ "| ___ \\       (_)     (_)                       | ___ \\                                  | | / /       (_)       | |    | |  \r\n"
+				+ "| |_/ /  __ _  _  ___  _  _ __    __ _    __ _  | |_/ /  ___   __ _   __ _   __ _  _ __  | |/ /  _ __   _   __ _ | |__  | |_ \r\n"
+				+ "|    /  / _` || |/ __|| || '_ \\  / _` |  / _` | | ___ \\ / _ \\ / _` | / _` | / _` || '__| |    \\ | '_ \\ | | / _` || '_ \\ | __|\r\n"
+				+ "| |\\ \\ | (_| || |\\__ \\| || | | || (_| | | (_| | | |_/ /|  __/| (_| || (_| || (_| || |    | |\\  \\| | | || || (_| || | | || |_ \r\n"
+				+ "\\_| \\_| \\__,_||_||___/|_||_| |_| \\__, |  \\__,_| \\____/  \\___| \\__, | \\__, | \\__,_||_|    \\_| \\_/|_| |_||_| \\__, ||_| |_| \\__|\r\n"
+				+ "                                  __/ |                        __/ |  __/ |                                 __/ |            \r\n"
+				+ "                                 |___/                        |___/  |___/                                 |___/             ");
 		while (true) {
+			System.out.println();
 			System.out.println("1. 회원가입 2. 로그인 3. 랭킹보기");
 			int n = sc.nextInt();
 			int b = 0;
@@ -60,7 +70,7 @@ public class Main {
 				GameDAO dao = new GameDAO();
 				ArrayList<GameDTO> LIst = dao.rankingLIst(gameDTO);
 				for (int i = 0; i < LIst.size(); i++) {
-					System.out.println(i + ". id : " + LIst.get(i).getId() + ", 점수 : " + LIst.get(i).getScore());
+					System.out.println((i+1) + ". id : " + LIst.get(i).getId() + ", 점수 : " + LIst.get(i).getScore());
 				}
 
 			}
@@ -144,6 +154,7 @@ public class Main {
 		System.out.println("용사의 평화로운 노후를 위해 사냥과 도박과 골든벨을 통해 돈을 벌어보세요!");
 
 		while (true) {
+			sc.nextLine();
 			bgm.play(1);
 			System.out.println();
 			System.out.println("어서오십시오.");
@@ -324,6 +335,7 @@ public class Main {
 			}
 			if (s == 3) {
 				bgm.play(4);
+			
 				Controller.GoldenbelCon gc = new Controller.GoldenbelCon();
 				System.out.println("===========================골든벨===============================");
 				System.out.println("\r\n"
@@ -474,10 +486,18 @@ public class Main {
 							+ "              .,coxO0KXXXXXXXKK0OOxdoc:,..\r\n"
 							+ "                        ...");
 					System.out.println("행복한 인생을 살았습니다.");
+					sc.nextLine();
+					
 					
 					
 				}
-				
+				System.out.println("랭킹보기");
+				sc.nextLine();
+				GameDAO dao = new GameDAO();
+				ArrayList<GameDTO> LIst = dao.rankingLIst(gameDTO);
+				for (int i = 0; i < LIst.size(); i++) {
+					System.out.println(i + ". id : " + LIst.get(i).getId() + ", 점수 : " + LIst.get(i).getScore());
+				}
 				break;
 			}
 

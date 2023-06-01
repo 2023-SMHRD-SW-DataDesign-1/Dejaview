@@ -102,7 +102,7 @@ public class GameDAO {
 		ArrayList<GameDTO> rankingLIst = new ArrayList<GameDTO>();
 
 		try {
-			String sql = "select id, score from GameMember order by score ";
+			String sql = "select id, score from GameMember order by score desc";
 			psmt = conn.prepareStatement(sql);
 			rs = psmt.executeQuery();
 
