@@ -259,9 +259,9 @@ public class Main {
 						while (true) {
 							System.out.println();
 							System.out.print("골드를 얼마나 거시겠습니까? : ");
-							System.out.println();
-							 System.out.println("=============================================================");
 							gold2 = sc.nextInt();
+							System.out.println();	
+							 System.out.println("=============================================================");
 							if (gameDTO.getGold() >= gold2) {
 								gameDTO.setGold(gameDTO.getGold() - gold2);
 								break;
