@@ -14,6 +14,8 @@ public class Main {
 		GameDAO gameDAO = new GameDAO();
 		String rId = null;
 		// 회원가입 구간
+		BgmController bgm = new BgmController();
+		bgm.play(0);
 		System.out.println("\r\n"
 				+ "______         _       _                        ______                                    _   __        _         _      _   \r\n"
 				+ "| ___ \\       (_)     (_)                       | ___ \\                                  | | / /       (_)       | |    | |  \r\n"
@@ -80,8 +82,7 @@ public class Main {
 		}
 		// 로그인 성공시 브레이크로 빠져나옴.
 		// 변수값 DTO로 넘김
-		BgmController bgm = new BgmController();
-		bgm.play(0);
+		
 		gameDTO.setDay(5); // 게임 기한 설정
 		// 스토리 설명
 		sc.nextLine();
